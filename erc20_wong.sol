@@ -26,4 +26,12 @@ contract wongToken is ERC20, Ownable {
     function getOwner() external view returns (address) {
         return owner(); // `owner()` is inherited from `Ownable`
     }
+
+    function transfer(address recipient, uint256 amount) public override returns (bool) {
+        require(recipient != address(0), "ERC20: transfer to the zero address");
+        require(balanceOf(msg.sender) >= amount, "ERC20: transfer amount exceeds balance");
+
+        _transfer(msg.sender, recipient, amount);
+        return true;
+    }
 }
