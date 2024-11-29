@@ -7,6 +7,7 @@
 - **ERC20 Token**: Fully compliant with the ERC20 standard, meaning it can be integrated with decentralized applications (dApps), wallets, and exchanges that support ERC20 tokens.
 - **Mintable Token**: The contract owner can mint new tokens to any address.
 - **Burnable Token**: Users can burn their own tokens to reduce the total supply.
+- **Transfer Functionality**: Users can securely transfer tokens to other addresses.
 - **Owner Privileges**: Only the owner of the contract can mint new tokens.
 
 ## Contract Functions
@@ -42,5 +43,14 @@ The constructor sets the following properties:
   
 - **Access Control**: Publicly accessible.
 
+### `transfer(address recipient, uint256 amount)`
+- **Description**: Transfers tokens from the caller's account to a specified recipient.
+- **Parameters**:
+  - recipient: The address of the token recipient.
+  - amount: The amount of tokens to transfer.
+- **Functionality**:
+  - Decreases the balance of the caller by the transfer amount.
+  - Increases the balance of the recipient by the transfer amount.
+- **Access Control**: Any token holder can call this function, provided they have sufficient balance.
 
 **Ella Belle G. Wong**
